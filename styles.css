@@ -1,0 +1,279 @@
+:root {
+  --primary: #3C2A4D;       /* Deep Purple */
+  --primary-dark: #2A1F36;   /* Dark Plum */
+  --secondary: #C0A06B;      /* Muted Gold */
+  --background: #1E1626;     /* Dark Professional Background */
+  --text: #EAE2D0;           /* Soft Ivory */
+  --card-bg: #2A1F36;        /* Deep Card Background */
+  --hover: #D9B885;          /* Lighter Gold for Hover */
+  --border-light: #A48964;   /* Subtle Border Highlight */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* 🌌 Background Styling */
+body {
+  background: url('your-background-image.jpg') no-repeat center center fixed, var(--background);
+  background-size: cover;
+  color: var(--text);
+  min-height: 100vh;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  max-width: 900px;
+  width: 100%;
+}
+
+/* 🏆 Title Styling */
+.title {
+  color: var(--secondary);
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-shadow: 0 0 12px var(--secondary);
+}
+
+/* 📌 Battle Container */
+.battle-container {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* 🎭 Hero Selector */
+.hero-selector {
+  background: rgba(42,31,54,0.85);
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 0 18px rgba(192,160,107,0.3);
+  flex: 1 1 280px;
+  min-width: 280px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.hero-selector:hover {
+  box-shadow: 0 0 25px rgba(192,160,107,0.6);
+  transform: translateY(-6px);
+}
+
+.hero-selector h2 {
+  color: var(--secondary);
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+/* 📜 Hero Dropdown */
+.hero-dropdown {
+  width: 100%;
+  padding: 10px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+  background: rgba(42,31,54,0.85);
+  color: var(--text);
+  outline: none;
+  transition: background 0.3s ease-in-out;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D'14'%20height%3D'14'%20xmlns%3D'http://www.w3.org/2000/svg'%3E%3Cpath%20d%3D'M2%205l5%205%205-5'%20stroke%3D'%23C0A06B'%20stroke-width%3D'2'%20fill%3D'none'%20stroke-linecap%3D'round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 14px;
+}
+
+.hero-dropdown:focus {
+  background: rgba(60,42,77,0.85);
+}
+
+/* 🔹 Hero Stats */
+.hero-stats {
+  background: rgba(192,160,107,0.15);
+  padding: 1.2rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.hero-stats h3 {
+  color: var(--secondary);
+  margin-bottom: 0.6rem;
+  font-size: 1.4rem;
+}
+
+.hero-stats p {
+  margin: 0.4rem 0;
+  font-size: 1rem;
+}
+
+.hero-image {
+  width: 120px; /* Adjust as needed */
+  height: auto;
+  display: block;
+  margin: 10px auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(192,160,107,0.5);
+}
+
+/* 🎇 Battle Result */
+.battle-result {
+  background-color: rgba(42,31,54,0.85);
+  padding: 2rem;
+  border-radius: 16px;
+  margin-top: 2.5rem;
+  box-shadow: 0 0 15px rgba(192,160,107,0.3);
+  text-align: center;
+  width: 100%;
+}
+
+/* 📊 Probability Bar */
+.probability-bar {
+  width: 100%;
+  height: 35px;
+  background-color: var(--background);
+  border-radius: 18px;
+  overflow: hidden;
+  margin: 1.5rem 0;
+}
+
+.probability-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--secondary) 0%, var(--hover) 100%);
+  transition: width 0.5s ease-in-out;
+}
+
+.probability-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+/* 📜 Calculation Info */
+.calculation-info {
+  margin-top: 2.5rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(60,42,77,0.85) 0%, rgba(90,68,110,0.85) 100%);
+  border-radius: 16px;
+  text-align: center;
+  color: var(--text);
+  box-shadow: 0 0 15px rgba(192,160,107,0.3);
+}
+.calculation-info ul li {
+  text-align: justify;
+}
+
+/* ⚔️ Battle Button */
+.battle-btn {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  padding: 14px;
+  margin: 1.5rem auto;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: center;
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--hover) 100%);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0 4px 18px rgba(192,160,107,0.4);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.battle-btn:hover {
+  box-shadow: 0 0 22px rgba(192,160,107,0.8);
+  transform: translateY(-4px);
+}
+
+/* 🎭 File Upload */
+.file-upload-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+}
+
+/* Adjusted file label button */
+.file-label {
+  background: linear-gradient(135deg, var(--secondary), var(--hover));
+  color: white;
+  font-size: 16px; /* Reduced font size */
+  font-weight: bold;
+  padding: 10px 20px; /* Reduced padding */
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.file-label:hover {
+  background: var(--hover);
+}
+
+/* Hide the default file input */
+#file-upload {
+  display: none;
+}
+
+/* Modal Styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background-color: var(--card-bg);
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  color: var(--text);
+  text-align: left;
+  position: relative;
+}
+
+.close-button {
+  color: var(--secondary);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: var(--hover);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .battle-container {
+    flex-direction: column;
+  }
+
+  .battle-btn {
+    max-width: 280px;
+  }
+}

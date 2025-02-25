@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MLBB Hero Battle Game</title>
+  <link rel="stylesheet" href="styles.css" />
+  
+  <!-- Load jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+  <!-- Load PapaParse for CSV parsing -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+  
+  <!-- Load custom JS -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <h1 class="title">Mobile Legends Hero Battle</h1>
+
+  <!-- File Upload Container -->
+  <div class="file-upload-container">
+    <input type="file" id="file-upload" accept=".csv" />
+    <label for="file-upload" class="file-label">Upload MLBB Hero Dataset</label>
+  </div>
+
+  <!-- Show Most Durable Hero Button below the file upload -->
+  <div class="durable-hero-btn-container" style="text-align: center; margin-top: 20px;">
+    <button id="show-durable-hero" class="battle-btn">Show Most Durable Hero</button>
+  </div>
+
+  <!-- Modal for Most Durable Hero Result -->
+  <div id="durableHeroModal" class="modal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <div id="durable-hero-result-modal"></div>
+    </div>
+  </div>
+
+  <!-- Battle Result Section -->
+  <div class="battle-result" id="battle-result" style="display: none;">
+    <h2>Battle Prediction</h2>
+    <div class="probability-labels">
+      <span id="hero1-probability"></span>
+      <span id="hero2-probability"></span>
+    </div>
+    <div class="probability-bar">
+      <div class="probability-fill" id="probability-fill"></div>
+    </div>
+  </div>
+
+  <!-- Hero Selection Section -->
+  <div class="battle-container">
+<div class="hero-selector">
+    <h2>Hero 1</h2>
+    <select id="hero1-dropdown" class="hero-dropdown">
+        <option value="">-- Select Hero 1 --</option>
+    </select>
+    <div id="hero1-stats" class="hero-stats"></div>
+</div>
+
+<div class="hero-selector">
+    <h2>Hero 2</h2>
+    <select id="hero2-dropdown" class="hero-dropdown">
+        <option value="">-- Select Hero 2 --</option>
+    </select>
+    <div id="hero2-stats" class="hero-stats"></div>
+</div>
+
+  </div>
+
+  <!-- Calculation Info -->
+  <div class="calculation-info">
+    <h3>How is this calculated?</h3>
+    <p>The battle prediction uses a weighted scoring system that considers:</p>
+    <ul>
+      <li><strong>Survival Score</strong> = (HP × 0.35) + (Physical Defense × 0.25) + (Magic Defense × 0.25) + (HP Regen × 0.15)</li>
+      <li><strong>Attack Score</strong> = (Physical Attack × 0.4) + (Attack Speed × 0.3) + (Skill Effectiveness × 0.3)</li>
+      <li><strong>Utility Score</strong> = (Movement Speed × 0.4) + (Mana Regen × 0.3) + (Win Rate × 0.3)</li>
+    </ul>
+  </div>
+
+</body>
+</html>
